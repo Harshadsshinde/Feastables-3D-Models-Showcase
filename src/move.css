@@ -1,0 +1,49 @@
+/* Keyframe for upward movement */
+@keyframes move-up {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30%); /* Moves the cloud upward */
+    }
+    100% {
+      transform: translateY(0); /* Returns back to the original position */
+    }
+  }
+  
+  /* Keyframe for downward movement */
+  @keyframes move-down {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(30%); /* Moves the cloud downward */
+    }
+    100% {
+      transform: translateY(0); /* Returns back to the original position */
+    }
+  }
+  
+  .cloud {
+    width: 300px; /* Adjust the cloud size */
+    height: auto;
+    z-index: 10; /* Ensure the clouds are above the text */
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  
+  .cloud4 {
+    position: absolute;
+    top: 20%; /* Adjusts the vertical position of the first cloud */
+    right: 100%; /* Adjusts the horizontal position of the first cloud */
+    animation-name: move-up;
+  }
+  
+  .cloud3 {
+    position: absolute;
+    top: 40%; /* Adjusts the vertical position of the second cloud */
+    left: 100%; /* Adjusts the horizontal position of the second cloud */
+    animation-name: move-down;
+  }
+  

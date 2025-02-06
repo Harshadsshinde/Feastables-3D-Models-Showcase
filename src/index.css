@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@layer utilities {
+    /* Scrolling text animation */
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 15s linear infinite;
+    }
+  }
+  /* Apply text shadow to simulate a border effect */
+.text-border {
+  color: white; /* Change this to whatever color you want inside the text */
+  text-shadow: 
+    2px 2px 0px black,  /* Top left shadow */
+    -2px 2px 0px black, /* Top right shadow */
+    2px -2px 0px black, /* Bottom left shadow */
+    -2px -2px 0px black; /* Bottom right shadow */
+}

@@ -1,0 +1,221 @@
+/* Container for the scrolling text */
+.scrolling-text-container {
+  width: 100%; /* Full width of the container */
+  overflow: hidden; /* Hide any overflowed text */
+  position: relative; /* To control positioning */
+  background-color: #ffcc00; /* Amber background color */
+  padding: 1rem;
+  border-bottom: 4px solid #000; /* Bottom border for separation */
+}
+
+/* Scroll text effect */
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap; /* Prevent wrapping */
+  animation: slow-scroll 100s linear infinite; /* Infinite scrolling animation */
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+}
+
+/* Keyframes for horizontal scrolling */
+@keyframes slow-scroll {
+  0% {
+    transform: translateX(0); /* Start from the left */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left outside the screen */
+  }
+}
+
+/* Container for the scrolling text to create seamless loop */
+.scrolling-text-wrapper {
+  display: flex;
+  animation: scroll-wrapper 30s linear infinite; /* Infinite scrolling animation */
+}
+
+@keyframes scroll-wrapper {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* The second half will be scrolled after the first */
+  }
+}
+
+
+
+
+.video-gallery .scroll-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.video-gallery .scroll-content {
+  display: flex;
+  animation: scrollVideoImage 100s linear infinite;
+}
+
+@keyframes scrollVideoImage {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.video-gallery .scroll-item {
+  flex: 0 0 auto;
+  width: 250px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInAndSlideUp 0.8s ease-in-out forwards;
+  position: relative;
+  margin-right: 20px;
+  border: 2px solid #000; /* Border applied here */
+}
+
+@keyframes fadeInAndSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.video-gallery .scroll-item img,
+.video-gallery .scroll-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Chocolate Bar Section (Horizontal Infinite Scrolling) */
+.chocolate-bar-gallery {
+  margin-top: 50px; /* Starts below the yellow container */
+}
+
+.chocolate-bar-gallery .scroll-container {
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  margin-top: 0; /* Ensure it starts after the yellow container */
+}
+
+.chocolate-bar-gallery .scroll-content {
+  display: flex;
+  animation: scrollChocolateBars 90s linear infinite;
+}
+
+@keyframes scrollChocolateBars {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.chocolate-bar-gallery .scroll-item {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 100px;
+  background: white;
+  display: flex;
+  flex-direction: row; /* Flex to align image and name vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #000; /* Border applied here */
+}
+
+.chocolate-bar-gallery .scroll-item img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 10px; /* Space between the image and the name */
+}
+
+.chocolate-bar-gallery .scroll-item p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+/* Hide scrollbar for smoother look */
+.chocolate-bar-gallery .scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Stop animation on hover for Video/Image Section */
+.video-gallery .scroll-container:hover .scroll-content,
+.chocolate-bar-gallery .scroll-container:hover .scroll-content {
+  animation-play-state: paused;
+}
+
+/* Resume animation when hover ends */
+.video-gallery .scroll-container .scroll-content,
+.chocolate-bar-gallery .scroll-container .scroll-content {
+  animation-play-state: running;
+}
+
+/* Mute Button Positioning */
+.mute-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.mute-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.mute-button i {
+  font-size: 20px; /* Adjust icon size */
+}
+/* Container for the scrolling items (video/images) */
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Wrapper for the scrolling items (videos/images) */
+.scroll-content {
+  display: flex;
+  animation: scroll-wrapper 30s linear infinite; /* Infinite scrolling animation */
+}
+
+.scroll-item {
+  flex: 0 0 auto; /* Prevent shrinking, allow them to take the width they need */
+  margin-right: 20px; /* Space between items */
+}
+
+@keyframes scroll-wrapper {
+  0% {
+    transform: translateX(0); /* Start from the left */
+  }
+  100% {
+    transform: translateX(-50%); /* Move until second batch of items come into view */
+  }
+}
