@@ -1,38 +1,35 @@
-import React, { createContext, useContext, useState } from "react";
-
-// Create Cart Context
+import React, { createContext, useState, useContext } from "react";
 const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+export function CartProvider({ children }) {
+  const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (product) => {
-    setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === product.id);
+  const addToCart = (product, quantity) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item.id === product.id);
       if (existingItem) {
-        return prevCart.map((item) =>
+        return prevItems.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + product.quantity }
+            ? { ...item, quantity: Math.min(3, item.quantity + quantity) } // Max 3 items per product
             : item
         );
       } else {
-        return [...prevCart, product];
+        return [...prevItems, { ...product, quantity }];
       }
     });
   };
 
+  const removeFromCart = (id) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
-};
+}
 
-// Hook to use the context easily
-export const useCart = () => {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error("useCart must be used within a CartProvider");
-  }
-  return context;
-};
+export function useCart() {
+  return useContext(CartContext);
+}

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; 
 import { HelpCircle, Globe, Smile, MapPin, ShoppingCart } from "lucide-react";
 import Checkout from "../pages/Checkout"; // Import Checkout component
-
+import Sourcing from "../pages/Sourcing";
+import World from "../pages/World"
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -36,8 +37,8 @@ export default function Navbar() {
           <div className="flex space-x-8 font-bold text-black italic text-2xl">
             {/* ✅ Clicking 'SHOP' Opens Shop Page */}
             <Link to="/shop" className="hover:underline">SHOP</Link>
-            <a href="#" className="hover:underline">ETHICAL SOURCING</a>
-            <a href="#" className="hover:underline">WORLDWIDE DOMINATION</a>
+            <Link to="/Sourcing" className="hover:underline">ETHICAL SOURCING</Link>
+            <Link to="/World" className="hover:underline">WORLDWIDE DOMINATION</Link>
           </div>
         </div>
 

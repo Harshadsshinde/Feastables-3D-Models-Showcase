@@ -4,6 +4,8 @@ import Navbar from "../Components/Navbar"; // Ensure the correct import path
 import feastablesHero from "/animated.webp"; // Replace with the actual image path
 import Video from "../Components/video"
 import AnimatedBar from "../Components/AnimatedBar";
+import footer from "../Components/Footer";
+import Footer from "../Components/Footer";
 const Home = () => {
   return (
     <div>
@@ -32,6 +34,7 @@ const Home = () => {
       <ScrollingText />
       <Video/>
       <AnimatedBar/>
+      <Footer/>
     </div>
   );
 };

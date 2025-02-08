@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles.css'; // Import custom styles
 import '../move.css';
+import shop from "../pages/Shop";
 const VideoGallery = () => {
   const [mutedStates, setMutedStates] = useState([true, true, true, true]); // Default all videos muted
 
@@ -169,7 +170,7 @@ const VideoGallery = () => {
       {/* Chocolate Bar Type Scroller (Infinite scroll for types of bar) */}
       <div className='chocolate-bar-gallery'>
         <div className='scroll-container mt-10 p-2'>
-          <div className='scroll-content gap-7'>
+          <div className='scroll-content gap-7 onClick={/shop} '>
             <div className='scroll-item'>
               <img src='./milk.webp' alt='Milk Chocolate Bar' />
               <p>Milk Chocolate</p>
