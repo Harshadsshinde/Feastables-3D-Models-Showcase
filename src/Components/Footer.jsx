@@ -80,16 +80,16 @@ const Footer = () => {
         <div className="flex flex-col items-center text-center mt-6 md:mt-0">
           {/* Social Media */}
           <div className="flex space-x-6 text-4xl  mb-4">
-            <Link to="/404" className="hover:underline ">
+            <Link to="https://www.tiktok.com/@feastables" className="hover:underline ">
               <FaTiktok />
             </Link>
-            <Link to="/404" className="hover:underline">
+            <Link to="https://www.instagram.com/feastables" className="hover:underline">
               <FaInstagram />
             </Link>
-            <Link to="/404" className="hover:underline">
+            <Link to="https://discord.com/invite/chhxWZK2MK" className="hover:underline">
               <FaDiscord />
             </Link>
-            <Link to="/404" className="hover:underline">
+            <Link to="https://twitter.com/feastables" className="hover:underline">
               <FaXTwitter />
             </Link>
           </div>

@@ -27,7 +27,8 @@ function App() {
           <Route path="/footer" element={<Footer/>}></Route>
           <Route path="/404" element={<NotFound />} />
           <Route path="/Sourcing" element={<Sourcing />} />
-          <Route path="/world" element={<Sourcing />} />
+          <Route path="/World" element={<World />} />
+          
         </Routes>
       </AnimatePresence>
     </Router>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { HelpCircle, Globe, Smile, MapPin, ShoppingCart } from "lucide-react";
 import Checkout from "../pages/Checkout"; // Import Checkout component
 import Sourcing from "../pages/Sourcing";
-import World from "../pages/World"
+import World from "../pages/World";
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);

@@ -18,7 +18,7 @@ export default function Checkout({ cartOpen, setCartOpen }) {
   };
 
   return (
-    <div className="fixed top-0 right-0 w-1/3 h-full bg-white shadow-lg z-50 flex flex-col p-6">
+    <div className="fixed top-0 right-0 w-1/3 h-full bg-gray-200 shadow-lg z-50 flex flex-col p-6">
       <button
         className="absolute top-4 right-6 text-gray-600"
         onClick={() => setCartOpen(false)}
